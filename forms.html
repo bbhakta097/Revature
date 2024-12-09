@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Demo</title>
+</head>
+<body>
+    <h3 style="text-align: center;">Forms Demo</h3><hr/>
+    <form>
+        <label> Your name:</label>  
+            <input type="text" id = "name" name="name" placeholder="Enter your name"
+            required minlength="5"/><br/>
+
+        <label> Enter Password:</label> 
+            <input type="password" id = "password"/><br/>
+
+        <label> Enter Age: </label> 
+            <input type="number" id = "age" name="age"/><br/>
+        <label> Choose your gender: </label>
+            <input type="radio" name="gender" value="female">Female
+            <input type="radio" name="gender" value="male">Male
+        <br/><label>Choose your hobbies: </label>
+            <input type="checkbox" name="hobby" value="Eat">Eat
+            <input type="checkbox" name="hobby" value="Sleep" checked>Sleep
+            <input type="checkbox" name="hobby" value="Repeat" checked>Repeat
+        <br/><label>Food: </label>
+            <select name = "Food">
+                <option value="Italian">Italian</option>
+                <option value="French">French</option>
+                <option value="Indian">Indian</option>
+            </select>
+        <br/><label>Multiple Foods: </label>
+            <select name = "Food" multiple>
+                <option value="Italian">Italian</option>
+                <option value="French">French</option>
+                <option value="Indian">Indian</option>
+            </select>
+        <br/><label>Comments: </label>
+        <textarea rows="5" cols="30"></textarea>
+
+        <br/><input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
