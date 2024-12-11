@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Demo 5</title>
+    <style>
+        .completed {
+            color: green;
+            text-decoration: line-through;
+            font-weight: bold;
+        }
+
+        li{
+            color:red;
+            font-size: 23px;
+        }
+    </style>
+    <script>
+        function elementInsert(){
+            var inputTxt = document.getElementById("text1").value;
+            let newElement = document.createElement("li");
+            newElement.innerHTML=`
+            ${inputTxt}
+            <button onclick="markComplete(this)">Done</button>
+            <button onclick="deleteItem(this)">Delete</button>
+            <button onclick="editItem(this)">Edit</button>
+            `;
+            let whereToInsert = document.getElementById("myUL");
+            whereToInsert.append(newElement);
+            document.getElementById("text1").value = "";
+        }
+
+        function deleteItem(btn){
+            btn.parentElement.remove();
+        }
+        function markComplete(btn){
+            btn.parentElement.classList.toggle("completed");
+        }
+
+        function editItem(btn) {
+            let edit = btn.parentElement.firstChild.textContent;
+            let updatedEdit = prompt("Edit List:", edit);
+            if (updatedEdit) {
+                btn.parentElement.firstChild.textContent = updatedEdit + " ";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id = "firsth1" style="text-align: center;">To Do List:</h1><hr/>
+    <input type="text" id="text1"/>
+
+    <button onclick="elementInsert()">Add to List</button>
+    <hr/>
+    <ul id="myUL">
+        <li>
+            Pay the bills
+        </li>
+    </ul>
+</body>
+</html>
