@@ -1,10 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-import Hello from'./Hello.js';
-import EventDemo from './eventsdemo.js';
-import StateDemo from './stateDemo.js'; 
-import Post from './post.js';
+import Hello from './Hello/Hello.js';
+import EventDemo from './EventsDemo/eventsdemo.js';
+import StateDemo from './StateDemo/stateDemo.js';
+import Post from './Posts/post.js';
+import ListAndKeysComponent from './ListnKeys/ListAndKeysComponent.js';
+import AxiosDem from './AxiosDemo/axiosGetDemo.js';
+import Navbar from './Navbar.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ToDoList from './todolist/ToDoList.js';
+import AxiosDisp from './AxiosCrudOps/AxiosDisplay.js';
 
 function App() {
   let message = "Hello React Again....";
@@ -16,14 +21,21 @@ function App() {
     "This is comment 5"
   ]);
   return (
-    <div className="App">
-      <h2>Hello React</h2>
-      <h3>{message}</h3>
-      <Hello name="Bhumik"/>
-      <EventDemo/>
-      <StateDemo/>
-      <Post comments={comments}/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route exact path='/Hello' element={<Hello name ="Bhumik"/>} />
+          <Route path='/stateDemo' element={<StateDemo />} />
+          <Route path='/posts' element={<Post comments={comments}/>} />
+          <Route path='/ToDoList' element={<ToDoList/>} />
+          <Route path='/eventsDemo' element={<EventDemo/>} />
+          <Route path='/ListnKeys/ListAndKeysComponent' element={<ListAndKeysComponent/>} />
+          <Route path='/AxiosDemo/axiosgetDemo' element={<AxiosDem/>} />
+          <Route path='/AxiosCrudOps/AxiosDisplay' element={<AxiosDisp/>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
