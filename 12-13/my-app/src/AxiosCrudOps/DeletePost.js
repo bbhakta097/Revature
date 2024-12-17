@@ -13,7 +13,6 @@ const DeletePost = ({ onDeletePost }) => {
         axios
             .delete(`http://localhost:8000/posts/${postId}`)
             .then(() => {
-                alert(`Post with ID ${postId} deleted successfully!`);
                 setPostId("");
                 onDeletePost();
             })
@@ -25,17 +24,17 @@ const DeletePost = ({ onDeletePost }) => {
 
     return (
         <div>
-            <br />
-            <h3>Delete Post</h3>
+            <br/>
+            <h3>Delete Post by ID: </h3>
             <input
                 type="text"
                 placeholder="Enter Post ID"
                 value={postId}
                 onChange={(e) => setPostId(e.target.value)}
             />
-            <br />
+            <br/>
             <button onClick={handleDeletePost}>Delete Post</button>
-            <br />
+            <br/>
         </div>
     );
 };

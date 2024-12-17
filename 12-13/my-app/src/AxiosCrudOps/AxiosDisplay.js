@@ -21,15 +21,15 @@ const AxiosDisplay = () => {
 
     useEffect(() => {
         fetchPosts();
-    }, [])
+    }, []);
 
     return (
         <div>
             <h1>Axios Crud Operations</h1>
             <ReadPost posts={posts} />
-            <CreatePost OnNewPost={fetchPosts} />
-            <UpdatePost OnUpdatePost={fetchPosts}/>
-            <DeletePost onDeletePost={fetchPosts} />
+            <CreatePost onNewPost={fetchPosts}/>
+            <UpdatePost onUpdatePost={fetchPosts}/>
+            <DeletePost onDeletePost={fetchPosts}/>
            
         </div>
     );

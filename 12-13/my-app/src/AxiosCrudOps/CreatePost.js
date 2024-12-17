@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-const CreatePost = ({ OnNewPost }) => {
+const CreatePost = ({ onNewPost }) => {
 
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
@@ -15,7 +15,7 @@ const CreatePost = ({ OnNewPost }) => {
 
         axios.post("http://localhost:8000/posts", newPost)
             .then(() => {
-                OnNewPost();
+                onNewPost();
                 setTitle("");
                 setBody("");
             })
@@ -25,7 +25,7 @@ const CreatePost = ({ OnNewPost }) => {
     return (
         <div>
             <br/>
-            <h3>Create New Post</h3>
+            <h3>Create New Post:</h3>
             <input
                 type="text"
                 placeholder="Title"

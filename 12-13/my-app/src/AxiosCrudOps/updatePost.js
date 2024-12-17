@@ -21,10 +21,10 @@ const UpdatePost = ({ onUpdatePost }) => {
         };
 
         axios
-            .put(`http://localhost:8000/posts/${postId}`, updatedPost) // Use the postId in the URL
+            .put(`http://localhost:8000/posts/${postId}`, updatedPost)
             .then(() => {
-                onUpdatePost(); 
-                alert("Post updated successfully!");
+                console.log("Update successful, calling onUpdatePost...");
+                onUpdatePost();
                 setPostId("");
                 setTitle("");
                 setBody("");
@@ -38,7 +38,7 @@ const UpdatePost = ({ onUpdatePost }) => {
     return (
         <div>
             <br/>
-            <h3>Update Post</h3>
+            <h3>Update Post by ID:</h3>
             <input
                 type="text"
                 placeholder="Post ID"
