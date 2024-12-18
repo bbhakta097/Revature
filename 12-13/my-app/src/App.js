@@ -10,6 +10,8 @@ import Navbar from './Navbar.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ToDoList from './todolist/ToDoList.js';
 import AxiosDisp from './AxiosCrudOps/AxiosDisplay.js';
+import ButtonClicker from './ButtonClicker/ButtonClicker.js';
+import myContext from './contextDemo/myContext.js';
 
 function App() {
   let message = "Hello React Again....";
@@ -20,22 +22,30 @@ function App() {
     "This is comment 4",
     "This is comment 5"
   ]);
+
+  const sharedData = 'This is some shared data';
+
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route exact path='/Hello' element={<Hello name ="Bhumik"/>} />
-          <Route path='/stateDemo' element={<StateDemo />} />
-          <Route path='/posts' element={<Post comments={comments}/>} />
-          <Route path='/ToDoList' element={<ToDoList/>} />
-          <Route path='/eventsDemo' element={<EventDemo/>} />
-          <Route path='/ListnKeys/ListAndKeysComponent' element={<ListAndKeysComponent/>} />
-          <Route path='/AxiosDemo/axiosgetDemo' element={<AxiosDem/>} />
-          <Route path='/AxiosCrudOps/AxiosDisplay' element={<AxiosDisp/>} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <myContext.Provider value={sharedData}>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+
+          <Routes>
+            <Route exact path='/Hello' element={<Hello name="Bhumik" />} />
+            <Route path='/stateDemo' element={<StateDemo />} />
+            <Route path='/posts' element={<Post comments={comments} />} />
+            <Route path='/ToDoList' element={<ToDoList />} />
+            <Route path='/eventsDemo' element={<EventDemo />} />
+            <Route path='/ListnKeys/ListAndKeysComponent' element={<ListAndKeysComponent />} />
+            <Route path='/AxiosDemo/axiosgetDemo' element={<AxiosDem />} />
+            <Route path='/AxiosCrudOps/AxiosDisplay' element={<AxiosDisp />} />
+            <Route path='/ButtonClicker/ButtonClicker' element={<ButtonClicker />} />
+
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </myContext.Provider>
   );
 }
 

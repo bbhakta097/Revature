@@ -1,0 +1,1 @@
+create a comp witb a text box anbd a para what is put in the text box it is simultaniosl put in the para

@@ -12,6 +12,8 @@ const Navbar = () => {
                 <Link to="/ListnKeys/ListAndKeysComponent">List and Keys</Link>
                 <Link to="/AxiosDemo/axiosgetDemo">Axios Demo</Link>
                 <Link to="/AxiosCrudOps/AxiosDisplay">Axios Crud Operations</Link>
+                <Link to="/ButtonClicker/ButtonClicker">Button Clicker</Link>
+
             </div>
         </div>
     );
